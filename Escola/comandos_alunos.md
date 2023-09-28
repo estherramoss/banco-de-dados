@@ -3,30 +3,45 @@
 ### Criar banco de dados
 ```sql
 
--- 1ª Digitação (SQL para criar o Banco de dados)
+CREATE DATABASE tecdev_escola_esther CHARACTER SET utf8mb4;
 
 ```
 <!-- ____________________________________________________________________ -->
 ### Criar tabela cursos
 ```sql
 
--- 2ª Digitação (SQL para criar a tabela Cursos)
-
+CREATE TABLE cursos(
+    id SMALLINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    titulo VARCHAR(30) NOT NULL,
+    carga_horaria SMALLINT, NOT NULL
+    professor_id SMALLINT NOT NULL
+)
 
 ```
 <!-- ____________________________________________________________________ -->
 ### Criar tabela professores
 ```sql
 
--- 3ª Digitação (SQL para criar a tabela Professores)
-
+CREATE TABLE professores(
+    id SMALLINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(50) NOT NULL,
+    area_de_atuacao ENUM('design', 'desenvolvimento', 'infra') NOT NULL,
+    curso_id SMALLINT NOT NULL
+)
 
 ```
 <!-- ____________________________________________________________________ -->
 ### Criar tabela alunos
 ```sql
 
--- 4ª Digitação (SQL para criar a tabela Alunos)
+CREATE TABLE alunos(
+    id SMALLINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(30) NOT NULL,
+    data_de_nascimento DATE,
+    primeira_nota DECIMAL (4,2),
+    segunda_nota DECIMAL (4,2),
+    curso_id SMALLINT
+)
 
 
 ```
